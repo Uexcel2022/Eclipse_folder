@@ -1,0 +1,87 @@
+package IPAddress;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+import ArrayList.Array;
+
+public class iP {
+
+	public static void main(String[] args) {
+
+		iP p = new iP();
+//		p.verifyIPAddress("000.120.250.020");
+		p.ipAddress("000.120.250");
+
+	}
+
+	public void verifyIPAddress(String ip) {
+		String[] validChars = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "." };
+		if (ip.length() > 15) {
+			System.out.println("Invalid IP address");
+		} else {
+//			boolean in = false;
+			char[] O = ip.toCharArray();
+			String[] In = new String[ip.length()];
+			String[] notIn = new String[ip.length()];
+			for (int i = 0; i < O.length; i++) {
+				for (int j = 0; j < validChars.length; j++) {
+					if (String.valueOf(O[i]).equalsIgnoreCase(String.valueOf(validChars[j]))) {
+						In[i] = String.valueOf(ip.charAt(i));
+					} else {
+						notIn[i] = String.valueOf(ip.charAt(i));
+					}
+				}
+			}
+			for (int i = 0; i < notIn.length; i++) {
+				if (notIn[i] != null && notIn[i].equalsIgnoreCase(In[i])) {
+					System.out.println("invalid");
+					break;
+				}
+
+			}
+//			 System.out.println("Mr Jide said \"Mir Udoka can't help/\\assist himself\"");
+			boolean f = true;
+			String[] check = ip.split("\\.");
+			System.out.println(Arrays.toString(check));
+			for (int i = 0; i < check.length; i++) {
+
+				if (check[i].length() < 1) {
+					f = false;
+					break;
+				}
+
+				if (Integer.parseInt(check[i]) < 0 || Integer.parseInt(check[i]) > 255 || check[i].length() > 3
+						|| check.length != 4){
+					f = false;
+					break;
+				}
+			}
+			if (f) {
+				System.out.println("True");
+			} else
+				System.out.println("False");
+		}
+	}
+
+	void ipAddress(String ip) {
+		boolean f = true;
+		String[] check = ip.split("\\.");
+		System.out.println(Arrays.toString(check));
+		if (check.length == 4 && !check[0].isEmpty() && !check[1].isEmpty() && !check[2].isEmpty() 
+				&& !check[3].isEmpty()) {
+			for (int i = 0; i < check.length; i++) {
+				if (Integer.parseInt(check[i]) < 0 || Integer.parseInt(check[i]) > 255 || check[i].length() > 3) {
+					f = false;
+					break;
+				}
+			}
+			if (f) {
+				System.out.println("True");
+			} else
+				System.out.println("False");
+		} else
+			System.out.println("False");
+	}
+
+}

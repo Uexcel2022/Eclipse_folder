@@ -1,0 +1,27 @@
+1687699300010	Rename field 'misses'
+1687775966176	Rename type 'NumberGuess'
+1687785771247	Rename local variable 'rd'
+1687785903590	Rename type 'WorkingWithRandom'
+1687787845611	Delete element
+1687790234956	Rename type 'ArrayListClass'
+1687816441740	Rename resource 'dream_it_possible_official_mv_aac_58232.wav'
+1687857882165	Copy file
+1687857943212	Copy file
+1687860002016	Rename type 'JLabel'
+1687864329959	Delete element
+1687867996355	Rename resource 'refresh_FILL0_wght400_GRAD0_opsz48.png'
+1687868490903	Delete element
+1687868529372	Rename resource 'refresh_FILL0_wght400_GRAD0_opsz48.png'
+1687885396402	Rename type 'Panel'
+1687891847683	Copy file
+1687893238634	Rename local variable 'panel'
+1687903479596	Rename field 'Options'
+1687903678590	Rename field 'player1'
+1687903701528	Rename field 'player2'
+1687911230780	Rename local variable 'panel'
+1687965256501	Rename method 'changePlayer'
+1688028758986	Rename type 'ComboBox'
+1688028805445	Rename type 'ComboBoxx'
+1688059909855	Rename type 'Generic'
+1688110758363	Delete element
+1688110772845	Move compilation unit

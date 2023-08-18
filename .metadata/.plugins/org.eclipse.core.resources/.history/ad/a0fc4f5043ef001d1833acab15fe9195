@@ -1,0 +1,94 @@
+package Persons;
+
+import java.util.Scanner;
+
+public class Person {
+	protected String firstName;
+	protected String lastName;
+	protected int age;
+	protected int ID;
+	static String[] chosen = { "", "students", "employees" };
+
+	public Person(double ID, String firstName, String lastName, double age) {
+		this.ID = (int) ID;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = (int) age;
+
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s \nFirst name: %s  \nLast name: %s  \nAge: %s", ID, firstName, lastName, age);
+	}
+	public static double getNum(String prompt) {
+		System.out.print(prompt + " >> ");
+		return Double.parseDouble(sc.nextLine());
+	}
+
+	public static String getString(String prompt) {
+		System.out.print(prompt + " >> ");
+		return sc.nextLine();
+	}
+	
+	public static void main(String[] args) {
+		do {
+			try {
+				String choice = RunPerson.getString("\n1. Student Object\n2. employee Object \n0. Exit");
+				if (choice.equals("0")) {
+					break;
+				}
+				if (!choice.equals("1") && !choice.equals("2")) {
+					System.out.println("Error! Enter 1 or 2");
+					continue;
+				} else {
+
+					int persons = Integer.valueOf(getString("Number of person"));
+
+					accept(choice, persons);
+				}
+
+			} catch (Exception e) {
+				System.out.println("Error " + e.getMessage());
+			}
+		} while (true);
+	}
+}
+
+class Student extends Person {
+	String course;
+
+	public Student(double ID, String firstName, String lastName, double age, String course) {
+		super(ID, firstName, lastName, age);
+		this.course = course;
+	}
+
+	@Override
+	public String toString() {
+		return "StudentID: " + super.toString() + String.format("\nCourse-enrolled: %s", course);
+	}
+}
+
+class Employee extends Person {
+	String designation;
+	String deptName;
+	double salary;
+
+	public Employee(double ID, String firstName, String lastName, double age, String deptName, String designation,
+			double salary) {
+		super(ID, firstName, lastName, age);
+		this.designation = designation;
+		this.salary = salary;
+		this.deptName = deptName;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee ID: " + super.toString()
+				+ String.format("\nDept Name: %s \nDesignation: %s \nSalary: %.2f", deptName, designation, salary);
+	}
+	
+	
+}
+
+

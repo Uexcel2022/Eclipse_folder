@@ -1,0 +1,18 @@
+1682585452699	Rename field 'w'
+1682588150678	Rename method 'display'
+1682595192088	Rename method 'displayRunning'
+1682595215005	Rename method 'displayWalking'
+1682595267499	Rename method 'displayWalkingWithWeight'
+1682595291793	Rename method 'displayRunningWithGoreTex'
+1682595435596	Rename type 'Array'
+1682601372908	Rename local variable 'name'
+1682605294902	Rename local variable 'obj'
+1682610881780	Rename method 'getCless'
+1682671945756	Delete element
+1682672028936	Rename type 'Interface'
+1682676447336	Delete element
+1682708234503	Move compilation unit
+1682708246422	Move compilation unit
+1682708299687	Move compilation unit
+1682708305359	Move compilation unit
+1682709067042	Delete element

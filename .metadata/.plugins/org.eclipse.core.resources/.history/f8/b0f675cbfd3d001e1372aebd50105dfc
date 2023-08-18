@@ -1,0 +1,73 @@
+package baseBallGame;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class GameRecord {
+
+	public static void main(String[] args) {
+
+		ArrayList<String> score = new ArrayList<>();
+
+//		score.add("5");
+//		score.add("2");
+//		score.add("c");
+//		score.add("d");
+//		score.add("+");
+
+//		score.add("5");
+//		score.add("-2");
+//		score.add("4");
+//		score.add("c");
+//		score.add("d");
+//		score.add("9");
+//		score.add("+");
+//		score.add("+");
+		
+		score.add("1");
+
+		GameRecord.manipulateArray(score);
+
+	}
+
+	public static void manipulateArray(ArrayList<String> value) {
+
+		ArrayList<String> check = new ArrayList<>();
+		String previusValue = "";
+		for (int i = 0; i < value.size(); i++) {
+			
+			if (value.get(i).equalsIgnoreCase("c") && i > 0) {
+				check.remove(previusValue);
+			}
+
+			if ((value.get(i).equalsIgnoreCase("d") && i > 0)) {
+				check.add("d");
+				int num = Integer.parseInt(check.get(check.indexOf("d")-1));
+				check.add(String.valueOf(num* 2));
+				check.remove("d");
+			}
+
+			if ((value.get(i).equalsIgnoreCase("+") && i > 0)) {
+				check.add("+");
+				int firsttnum = Integer.parseInt(check.get(check.indexOf("+")-1));
+				int secnum = Integer.parseInt(check.get(check.indexOf("+")-2));
+				check.add(String.valueOf(firsttnum+secnum));
+				check.remove("+");
+			}
+
+			if (!value.get(i).equalsIgnoreCase("c") && !value.get(i).equalsIgnoreCase("d")
+					&& !value.get(i).equalsIgnoreCase("+")) {
+				
+				check.add(value.get(i));
+				previusValue = value.get(i);
+			}
+			System.out.println(check);
+		}
+		int sum = 0;
+		for (String n : check) {
+			sum += Integer.parseInt(n);
+		}
+		System.out.println(sum);
+	}
+
+}

@@ -1,0 +1,17 @@
+1683556886313	Rename local variable 'student'
+1683573154307	Rename field 'A'
+1683573206878	Rename field 'intermediate'
+1683573256526	Rename field 'a'
+1683575901774	Rename field 'ID'
+1683624377085	Rename field 'stdPromt'
+1683712739440	Move compilation unit
+1683730131504	Move compilation unit
+1683730175433	Copy compilation unit
+1683750741752	Delete element
+1683751301841	Rename type 'input'
+1683751332496	Rename method 'accept'
+1683751421972	Rename method 'input'
+1683751477853	Rename type 'Input'
+1683816899537	Rename field 'dept'
+1683835010524	Rename local variable 'c'
+1683909764877	Rename local variable 'objs'

@@ -1,0 +1,64 @@
+package DatabaseConnector;
+
+
+import java.awt.Color;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+public class Jtable extends JFrame {
+//	Statement st2 = Connector.createStatement();
+	String FirstName;
+	String LastName;
+	String UserName;
+	String Password;
+//	String Gender;
+	
+
+	Jtable() {
+		setTitle("Table Data");
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(500, 500);
+		setLocationRelativeTo(null);
+
+		String[] Columns = { " FirstName ", " LastName ", " UserName ", " Password "};
+
+		DefaultTableModel DM = new DefaultTableModel(Columns, 0);
+		JTable JT = new JTable(DM);
+
+		JT.setVisible(true);
+		JT.setBounds(10, 10, 200, 200);
+		JT.setBackground(Color.white);
+		JT.setForeground(Color.black);
+		JScrollPane scroll = new JScrollPane(JT);
+		add(scroll);
+
+		String selectIntoTable = String.format("SELECT * FROM SIGNUP");
+		try {
+			ResultSet rs = st2.executeQuery(selectIntoTable);
+			while (rs.next()) {
+				FirstName = rs.getString("FirstName");
+				LastName = rs.getString("LastName");
+				UserName = rs.getString("UserName");
+				Password = rs.getString("Password");
+//				Gender = rs.getString("Gender");
+
+				String[] tablearr = { FirstName, LastName, UserName, Password};
+				DM.addRow(tablearr);
+			}
+		} catch (SQLException sqe) {
+			System.out.println(sqe.getMessage());
+		}
+
+	}
+
+	public static void main(String[] args) {
+		new Jtable();
+	}
+}

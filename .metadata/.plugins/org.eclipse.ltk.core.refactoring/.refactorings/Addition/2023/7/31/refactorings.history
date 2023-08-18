@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;PKG.AddServelet&apos; to &apos;AddServlet&apos;&#x0D;&#x0A;- Original project: &apos;Addition&apos;&#x0D;&#x0A;- Original element: &apos;PKG.AddServelet&apos;&#x0D;&#x0A;- Renamed element: &apos;PKG.AddServlet&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;AddServelet&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;PKG{AddServelet.java[AddServelet" matchStrategy="1" name="AddServlet" qualified="false" references="true" similarDeclarations="false" stamp="1690798874233" textual="false" version="1.0"/>
+</session>

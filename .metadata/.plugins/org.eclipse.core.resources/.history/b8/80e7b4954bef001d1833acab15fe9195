@@ -1,0 +1,168 @@
+package Persons;
+
+import java.util.Scanner;
+
+public class Person {
+	protected String firstName;
+	protected String lastName;
+	protected int age;
+	protected int ID;
+	static String[] chosen = { "", "students", "employees" };
+
+	public Person(double ID, String firstName, String lastName, double age) {
+		this.ID = (int) ID;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = (int) age;
+
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s \nFirst name: %s  \nLast name: %s  \nAge: %s", ID, firstName, lastName, age);
+	}
+
+	public static void main(String[] args) {
+		do {
+			try {
+				String choice = input.getString("\n1. Student Object\n2. employee Object \n0. Exit\n");
+				if (choice.equals("0")) {
+					break;
+				}
+				if (!choice.equals("1") && !choice.equals("2")) {
+					System.out.println("Error! Enter 1 or 2");
+					continue;
+				} else {
+
+					int persons = Integer
+							.valueOf(input.getString("How many " + chosen[Integer.valueOf(choice)] + "?\n"));
+
+					input.accept(choice, persons);
+				}
+
+			} catch (Exception e) {
+				System.out.println("Error " + e.getMessage());
+			}
+		} while (true);
+	}
+}
+
+class Student extends Person {
+	String course;
+
+	public Student(double ID, String firstName, String lastName, double age, String course) {
+		super(ID, firstName, lastName, age);
+		this.course = course;
+	}
+
+	@Override
+	public String toString() {
+		return "StudentID: " + super.toString() + String.format("\nCourse-enrolled: %s", course);
+	}
+}
+
+class Employee extends Person {
+	String designation;
+	String deptName;
+	double salary;
+
+	public Employee(double ID, String firstName, String lastName, double age, String deptName, String designation,
+			double salary) {
+		super(ID, firstName, lastName, age);
+		this.designation = designation;
+		this.salary = salary;
+		this.deptName = deptName;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee ID: " + super.toString()
+				+ String.format("\nDept Name: %s \nDesignation: %s \nSalary: %.2f", deptName, designation, salary);
+	}
+
+}
+
+class input {
+	static Scanner sc = new Scanner(System.in);
+
+	public static double getNum(String prompt) {
+		System.out.print(prompt + " >> ");
+		return Double.parseDouble(sc.nextLine());
+	}
+
+	public static String getString(String prompt) {
+		System.out.print(prompt + " >> ");
+		return sc.nextLine();
+	}
+
+	public static void acceptPerson(Person[] person) {
+		for (Person n : person) {
+			if (n != null && n.getClass().getSimpleName().equals("Student")) {
+				Student obj = (Student) n;
+				System.out.println("\n" + obj);
+			} else {
+				if (n != null) {
+					Employee obj = (Employee) n;
+					System.out.println("\n" + obj);
+				}
+			}
+		}
+
+	}
+
+	public static void accept(String choice, int persons) {
+		String fName = null;
+		String lName = null;
+		String course = null;
+		double age = 0.0;
+		double ID = 0.0;
+		String dept = null;
+		String desig = null;
+		double salary = 0.0;
+		int count = 0;
+		Person[] person = new Person[persons];
+		while (count < persons) {
+			try {
+				if (ID == 0.0)
+					ID = input.getNum("ID");
+				if (fName == null)
+					fName = input.getString("First name");
+				if (lName == null)
+					lName = input.getString("Last name");
+				if (age == 0.0)
+					age = input.getNum("Age");
+
+				if (choice.equals("1")) {
+					if (course == null)
+						course = input.getString("Course-enrolled");
+					Student st = new Student(ID, fName, lName, age, course);
+					person[count] = st;
+
+				} else if (choice.equals("2")) {
+					if (dept == null)
+						dept = input.getString("dept.");
+					if (desig == null)
+						desig = input.getString("desig.");
+					if (salary == 0.0)
+						salary = input.getNum("Salary");
+					Employee em = new Employee(ID, fName, lName, age, dept, desig, salary);
+					person[count] = em;
+				}
+
+				count++;
+				fName = null;
+				lName = null;
+				course = null;
+				age = 0.0;
+				ID = 0.0;
+				dept = null;
+				desig = null;
+				salary = 0.0;
+				count = 0;
+			} catch (Exception e) {
+				System.out.println("Error " + e.getMessage());
+			}
+		}
+		acceptPerson(person);
+	}
+}

@@ -1,0 +1,85 @@
+package Persons;
+
+import java.util.Scanner;
+
+public class RunPerson {
+	static Scanner sc = new Scanner(System.in);
+
+	public static double getNum(String prompt) {
+		System.out.print(prompt + " >> ");
+		return Double.parseDouble(sc.nextLine());
+	}
+
+	public static String getString(String prompt) {
+		System.out.print(prompt + " >> ");
+		return sc.nextLine();
+	}
+
+	public static void main(String[] args) {
+		do {
+			try {
+				String choice = RunPerson.getString("\n1. Student Object\n2. employee Object \n0. Exit");
+				if (choice.equals("0")) {
+					break;
+				}
+				if (!choice.equals("1") && !choice.equals("2")) {
+					System.out.println("Error! Enter 1 or 2");
+					continue;
+				} else {
+
+					int persons = Integer.valueOf(getString("Number of person"));
+
+					accept(choice, persons);
+				}
+
+			} catch (Exception e) {
+				System.out.println("Error " + e.getMessage());
+			}
+		} while (true);
+	}
+
+	public static void accept(String choice, int persons) {
+		int count = 0;
+		Person[] person = new Person[persons];
+		while (count < persons) {
+			try {
+				double ID = RunPerson.getNum("ID");
+				String fName = RunPerson.getString("First name");
+				String lName = RunPerson.getString("Last name");
+				double age = RunPerson.getNum("Age");
+				if (choice.equals("1")) {
+					String course = RunPerson.getString("Course-enrolled");
+					Student st = new Student(ID, fName, lName, age, course);
+					person[count] = st;
+
+				} else if (choice.equals("2")) {
+					String dept = RunPerson.getString("dept.");
+					String desig = RunPerson.getString("desig.");
+					double salary = RunPerson.getNum("Salary");
+					Employee em = new Employee(ID, fName, lName, age, dept, desig, salary);
+					person[count] = em;
+				}
+				count++;
+			} catch (Exception e) {
+				System.out.println("Error " + e.getMessage());
+			}
+		}
+		acceptPerson(person);
+	}
+
+	public static void acceptPerson(Person[] person) {
+		for (Person n : person) {
+			if (n != null && n.getClass().getSimpleName().equals("Student")) {
+				Student obj = (Student) n;
+				System.out.println("\n" + obj);
+			} else {
+				if (n != null) {
+					Employee obj = (Employee) n;
+					System.out.println("\n" + obj);
+				}
+			}
+		}
+
+	}
+
+}

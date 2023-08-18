@@ -1,0 +1,191 @@
+package Resources;
+
+public class resource {
+	
+//	public static String invalidChar = "";
+	
+	
+	public static void main(String[] args) {
+		
+		System.out.println(Resources.resource.isDigit("9-9", "-"));
+	}
+	
+	public static String capitalized(String string) {
+		String newString = " ";
+		String[] splittedString = string.split(" ");
+		for (int i = 0; i < splittedString.length; i++) {
+			for (int j = 0; j < splittedString[i].length(); j++) {
+				if (j == 0) {
+					newString += String.valueOf(splittedString[i].charAt(j)).toUpperCase();
+				} else {
+					newString += String.valueOf(splittedString[i].charAt(j));
+				}
+			}
+			newString += " ";
+		}
+
+		return newString;
+		
+
+	}
+
+	public static String toTitleCase(String string) {
+
+		String titleCase = String.valueOf(string.charAt(0)).toUpperCase();
+		for (int i = 1; i < string.length(); i++) {
+			titleCase += string.charAt(i);
+		}
+		
+		return titleCase;
+	}
+	
+
+	public static String checkString(String string, String exception) {
+		String alpha = null;
+		String[] splittedString = string.split(":");
+		string = splittedString[0];
+		String isIn[] = new String[string.length()];
+		String notIn[] = new String[string.length()];
+
+		if (!exception.isEmpty()) {
+			if (exception.contains("0-9")) {
+				alpha = "abcdefghijklmnopqrstuvwxyz0123456789" + exception;
+			} else
+				alpha = "abcdefghijklmnopqrstuvwxyz" + exception;
+		} else
+			alpha = "abcdefghijklmnopqrstuvwxyz";
+
+		char[] alphaChr = alpha.toCharArray();
+		for (int i = 0; i < string.length(); i++) {
+			for (int j = 0; j < alphaChr.length; j++) {
+				if (String.valueOf(alphaChr[j]).equalsIgnoreCase(String.valueOf(string.charAt(i)))) {
+					isIn[i] = String.valueOf(string.charAt(i));
+				} else
+					notIn[i] = String.valueOf(string.charAt(i));
+			}
+		}
+		String invalidChar = "";
+		for (int i = 0; i < isIn.length; i++) {
+			if (isIn[i] == null) {
+				invalidChar += notIn[i];
+			}
+		}
+		if (invalidChar.length() > 0) {
+			if (invalidChar.isBlank()) {
+				invalidChar = "unsual charater spacing.";
+				return invalidChar;
+			} else
+				return invalidChar;
+		}
+		
+		return null;
+	}
+	
+	
+	public static String isDigit(String digit, String exception) {
+		String  string = "0123456789"+exception;
+		char [] validChars  = string.toCharArray();
+		char [] dig = digit.toCharArray();
+		String [] isValid = new String[digit.length()];
+		String [] notValid = new String[digit.length()];
+		String unwatedChars = "";
+		
+        
+		for(int i = 0; i < dig.length;i++) {
+	      for(int j = 0; j < validChars.length;j++) {
+	    	  if(validChars[j] == dig[i]) {
+	    		  isValid[i] = String.valueOf(validChars[j]);
+	    	  } else  notValid[i] = String.valueOf(validChars[j]);
+	      }
+		}
+		
+		String invalidChar = "";
+		for (int i = 0; i < isValid.length; i++) {
+			if (isValid[i] == null) {
+				invalidChar += notValid[i];
+			}
+		}
+		if (invalidChar.length() > 0) {
+			if (invalidChar.isBlank()) {
+				invalidChar = "unsual charater spacing.";
+				return invalidChar;
+			} else
+				return invalidChar;
+		}
+		
+		
+		
+//		String[] k = digit.split(" ");
+//		for (int i = 0; i < k.length; i++) {
+//			char[] b = k[i].toCharArray();
+//			for (int j = 0; j < b.length; j++) {
+//				charsInDigitCount++;
+//				for (int c = 0; c < validChars.length; c++) {
+//					if (String.valueOf(b[j]).equalsIgnoreCase(String.valueOf(validChars[c]))) {
+//						validCharInDigit += String.valueOf(b[j]) + " ";
+//						validCharsInDigitCount++;
+//					}
+//				}
+//
+//			}
+//		}
+//
+//		if (charsInDigitCount > validCharsInDigitCount) {
+			int h = 0;
+			int p = 0;
+			String[] isValidCharIndex = new String[digit.length()];
+			char[] d = digit.toCharArray();
+//			char[] v = validCharInDigit.toCharArray();
+			for (p = 0; p < d.length; p++) {
+				for (h = 0; h < validChars.length; h++) {
+					if (!String.valueOf(d[p]).isBlank()) {
+						if (d[p] == validChars[h]) {
+							isValidCharIndex[p] = String.valueOf(p);
+							break;
+						}
+					}
+				}
+			}
+			for (int i = 0; i < isValidCharIndex.length; i++) {
+				if (isValidCharIndex[i] == null && d[i] != ' ') {
+					unwatedChars += (String.valueOf(digit.charAt(i))) + ' ';
+				}
+			}
+
+//		}
+
+		String[] A = digit.split(" ");
+		String chk[] = new String[A.length];
+		String chk2[] = new String[A.length];
+		char[] x = unwatedChars.toCharArray();
+		for (int i = 0; i < A.length; i++) {
+			if (String.valueOf(A[i]).equalsIgnoreCase("-") || String.valueOf(A[i]).equalsIgnoreCase("-0")) {
+				unwatedChars += String.valueOf(A[i]) + ' ';
+			}
+
+			char[] a = A[i].toCharArray();
+			for (int j = 0; j < a.length; j++) {
+				if (a[j] == '-' && j > 0) {
+					chk2[i] = A[i];
+					for (int n = 0; n < x.length; n++) {
+						if (a[0] == x[n]) {
+							chk[i] = A[i];
+							unwatedChars = unwatedChars.replace(String.valueOf(x[n]), A[i]);
+						}
+					}
+				}
+			}
+		}
+
+		for (int i = 0; i < chk.length; i++) {
+			if (chk[i] != chk2[i]) {
+				unwatedChars += chk2[i] + ' ';
+			}
+		}
+		if (!unwatedChars.isBlank()) {
+			return "Invlid: " + unwatedChars;
+		} else
+			return null;
+	}
+
+}

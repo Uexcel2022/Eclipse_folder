@@ -1,0 +1,5 @@
+1690891384302	Move 'web.xml' to 'META-INF'
+1690914171209	Rename package 'PKG'
+1690920518984	Rename resource 'addition.html'
+1690920570141	Rename type 'AddServlet'
+1690921372910	Move 'web.xml' to 'WEB-INF'
