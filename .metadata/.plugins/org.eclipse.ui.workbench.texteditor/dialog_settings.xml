@@ -8,6 +8,7 @@
 		<item key="isRegEx" value="false"/>
 		<item key="selection" value="panel"/>
 		<list key="findhistory">
+			<item value=" "/>
 			<item value="&#x09;JOptionPane.showMessageDialog(null, &quot;Invalid date of birth or year of admission!&quot;, &quot;Validation&quot;,"/>
 			<item value="}"/>
 			<item value="this"/>

@@ -3,7 +3,7 @@
 	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="2"/>
 	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-20"/>
 	<item key="delegateUpdating" value="false"/>
-	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Program Files\GlassFish\glassfish7\mq\lib"/>
+	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Users\Uexcel\OneDrive - msoffice365e\Documents\Eclipse_Work_Space\ServletDemo\src\main\webapp\WEB-INF\lib"/>
 	<item key="UserLibraryLoadSaveDialog.size" value="640,680"/>
 	<item key="org.eclipse.jdt.ui.last.external.project" value="C:\Users\Uexcel\OneDrive - msoffice365e\Documents\Eclipse_Work_Space\MyProjects\src"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
@@ -71,7 +71,7 @@
 	</section>
 	<section name="DialogBounds_GenerateConstructorUsingFieldsSelectionDialog">
 		<item key="DIALOG_X_ORIGIN" value="245"/>
-		<item key="DIALOG_Y_ORIGIN" value="0"/>
+		<item key="DIALOG_Y_ORIGIN" value="9"/>
 		<item key="DIALOG_WIDTH" value="678"/>
 		<item key="DIALOG_HEIGHT" value="869"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
@@ -114,7 +114,7 @@
 		<item key="create_package_info_java" value="false"/>
 	</section>
 	<section name="ClasspathContainerSelectionPage">
-		<item key="index" value="10"/>
+		<item key="index" value="14"/>
 	</section>
 	<section name="ProblemSeveritiesConfigurationBlock">
 		<item key="expanded0" value="false"/>

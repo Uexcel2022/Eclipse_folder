@@ -2,7 +2,10 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Uexcel\Eclipse_Work_Space\TableOnJSP"/>
+			<item value="C:\Users\Uexcel\OneDrive - msoffice365e\Documents\Eclipse_Work_Space\MavenWebApp\pom.xml"/>
 			<item value="C:\Users\Uexcel\OneDrive - msoffice365e\Documents\Eclipse_Work_Space\AddServletUsingPost"/>
+			<item value="C:\Users\Uexcel\OneDrive - msoffice365e\Documents\Eclipse_Work_Space\com.uexcel\src\main\webapp\index.jsp"/>
 			<item value="C:\Users\Uexcel\OneDrive - msoffice365e\Documents\Eclipse_Work_Space\ServletSession"/>
 			<item value="C:\Users\Uexcel\OneDrive - msoffice365e\Documents\Eclipse_Work_Space\Addition\src\main\webapp\add.html"/>
 		</list>
@@ -28,18 +31,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.com.Jasisoos"/>
-			<item value="myproject.com.uexcel"/>
-			<item value="com.uexcel"/>
 		</list>
 		<list key="groupId">
-			<item value="com.com"/>
-			<item value="myproject"/>
 		</list>
 		<list key="artifactId">
-			<item value="Jasisoos"/>
-			<item value="com.uexcel"/>
-			<item value="project"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
